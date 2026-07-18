@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Planner Dashboard · Kosisochukwu Ezejiugo</title>
+  <meta name="description" content="Modern Student Academic Planner Dashboard with calendar, events, and task management." />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="planner-dashboard.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-bar" aria-label="Primary">
+      <a class="brand" href="index.html">MIVA<small>PORTFOLIO / CIT 204</small></a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="dashboard.html" aria-current="page">Academic Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="dashboard-container">
+        
+     
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <div class="content-wrapper">
+          <!-- Left Section: Calendar & Events -->
+          <section class="calendar-section">
+            <!-- Calendar Card -->
+            <div class="card calendar-card">
+              <div class="card-header">
+                <h2 class="card-title">Calendar</h2>
+                <div class="calendar-controls">
+                  <button class="btn-icon" id="prev-month" aria-label="Previous month">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="btn-text btn-today" id="today-btn">Today</button>
+                  <button class="btn-icon" id="next-month" aria-label="Next month">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="calendar-header">
+                <h3 class="month-year" id="month-year"></h3>
+              </div>
+
+              <!-- View Tabs -->
+              <div class="view-tabs">
+                <button class="tab-btn active" data-view="month">Month</button>
+                <button class="tab-btn" data-view="week">Week</button>
+                <button class="tab-btn" data-view="day">Day</button>
+              </div>
+
+              <!-- Weekday Headers -->
+              <div class="weekdays">
+                <div class="weekday">Sun</div>
+                <div class="weekday">Mon</div>
+                <div class="weekday">Tue</div>
+                <div class="weekday">Wed</div>
+                <div class="weekday">Thu</div>
+                <div class="weekday">Fri</div>
+                <div class="weekday">Sat</div>
+              </div>
+
+              <!-- Calendar Grid -->
+              <div class="calendar-grid" id="calendar-grid"></div>
+            </div>
+
+            <!-- Add Event Button -->
+            <button class="btn btn-primary btn-add-event" id="add-event-btn">
+              <i class="fas fa-plus"></i> Add Event
+            </button>
+          </section>
+
+          <!-- Right Section: Sidebar Cards -->
+          <aside class="right-sidebar">
+            <!-- Today's Agenda Card -->
+            <div class="card agenda-card">
+              <div class="card-header">
+                <h3 class="card-title">Today's Agenda</h3>
+              </div>
+              <div class="agenda-list" id="agenda-list">
+                <!-- Populated by JavaScript -->
+              </div>
+            </div>
+
+            <!-- Tasks Card -->
+            <div class="card tasks-card">
+              <div class="card-header">
+                <h3 class="card-title">My Tasks</h3>
+              </div>
+              
+              <div class="task-input-group">
+                <input type="text" id="task-input" class="task-input" placeholder="Add a new task..." />
+                <button class="btn-icon btn-add-task" id="add-task-btn">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+
+              <div class="tasks-list" id="tasks-list">
+                <!-- Populated by JavaScript -->
+              </div>
+            </div>
+
+            <!-- Quick Stats Card -->
+            <div class="card stats-card">
+              <div class="stat-item">
+                <div class="stat-icon" style="background-color: #d4a574;">
+                  <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="stat-content">
+                  <p class="stat-label">Events This Month</p>
+                  <p class="stat-value" id="stat-events">0</p>
+                </div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-icon" style="background-color: #e8b4a8;">
+                  <i class="fas fa-tasks"></i>
+                </div>
+                <div class="stat-content">
+                  <p class="stat-label">Pending Tasks</p>
+                  <p class="stat-value" id="stat-pending">0</p>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- ============ ADD EVENT MODAL ============ -->
+  <div class="modal" id="event-modal">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Add Event</h2>
+        <button class="modal-close" id="modal-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <form id="event-form" class="event-form">
+        <div class="form-group">
+          <label for="event-title">Event Title *</label>
+          <input type="text" id="event-title" name="event-title" required placeholder="e.g., DSA Lecture" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="event-date">Date *</label>
+            <input type="date" id="event-date" name="event-date" required />
+          </div>
+          <div class="form-group">
+            <label for="event-time">Time</label>
+            <input type="time" id="event-time" name="event-time" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="event-color">Category</label>
+          <select id="event-color" name="event-color">
+            <option value="blue">Lecture</option>
+            <option value="green">Tutorial</option>
+            <option value="orange">Class</option>
+            <option value="red">Assignment Due</option>
+            <option value="purple">Study Session</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="event-description">Description</label>
+          <textarea id="event-description" name="event-description" placeholder="Add any details..."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Add Event</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Kosisochukwu Ezejiugo · MIVA Open University · All Rights Reserved</span>
+      <span>Built with semantic HTML, CSS Grid/Flexbox &amp; vanilla JS</span>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="planner-dashboard.js"></script>
+</body>
+</html>

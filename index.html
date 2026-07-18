@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Kosisochukwu Ezejiugo" />
+  <meta name="theme-color" content="#2c3e50" />
+  <title>Home · Kosisochukwu Ezejiugo — MIVA Student Portfolio</title>
+  <meta name="description" content="Student portfolio and academic management site for Kosisochukwu Ezejiugo, MIVA Open University." />
+  
+  <!-- Open Graph tags for social sharing -->
+  <meta property="og:title" content="Kosisochukwu Ezejiugo — MIVA Student Portfolio" />
+  <meta property="og:description" content="Student portfolio and academic management site. Projects, coursework, and an academic planner tool." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://salem-ezejiugo777.github.io/Assessment_1/" />
+  <meta property="og:image" content="assets/og-image.svg" />
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav-bar" aria-label="Primary">
+      <a class="brand" href="index.html">MIVA<small>PORTFOLIO / CIT&nbsp;204</small></a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner-dashboard.html">Academic Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO / PROFILE ============ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="welcome">Welcome to my student portfolio</p>
+          <h1>Hi, I'm <span>Kosi.</span><br />My focus is to make the web more secured.</h1>
+          <p class="hero-bio">
+            I am an undergraduate at MIVA Open University, currently pursuing a <em>B.Sc in Cyber Security</em>.
+            This site doubles as my portfolio and my academic command center for projects,
+            coursework, and a live planner that I use to track deadlines.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-brass" href="projects.html">View my projects</a>
+            <a class="btn btn-outline" href="about.html">More about me</a>
+          </div>
+        </div>
+
+        <div class="id-card" aria-hidden="true">
+          <div class="id-card-top">
+            <span>MIVA Open University</span>
+            <span class="id-stamp">Enrolled</span>
+          </div>
+          <div class="id-photo"><img src="IMG-20260716-WA0029.jpg" alt="Kosisochukwu Ezejiugo" /></div>
+          <h2 class="id-name">Kosisochukwu Ezejiugo</h2>
+          <p class="id-meta"><strong>Program:</strong> B.Sc. Cyber security<br />
+             <strong>Level:</strong> 100 · <strong>ID:</strong> 2025/B/CYB/0689</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BIOGRAPHY ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Brief biography</p>
+          <h2>A little about my journey</h2>
+        </div>
+        <div class="grid-2">
+          <p>
+            Growing up in an information technology age, I had always been deeply fascinated 
+            with how the internet works- the speed, social interactions, world wide interconnectivity 
+            and application development. This fascination led me into choosing a career in Cyber 
+            Security. This is for the purpose of protecting the internet users, digital 
+            property and information from threats while maintaining order on the internet.
+          </p>
+          <p>
+            Outside coursework, I keep a running list of small projects — this portfolio
+            being one of them. I'm especially interested in how web technologies can
+            support academic activities itself, which is why the Academic Planner on this 
+            site is not just a feature but a tool I use to track my academic progress.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUICK LINKS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Find your way around</p>
+          <h2>What's on this site</h2>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <p class="eyebrow">01 — Background</p>
+            <h3>About Me</h3>
+            <p>Education, career goals, technical skills, and the hobbies that keep me sane during exam week.</p>
+            <a href="about.html">Read more →</a>
+          </article>
+          <article class="card">
+            <p class="eyebrow">02 — Coursework</p>
+            <h3>Projects</h3>
+            <p>Three projects built for and around my Web Technologies coursework, with write-ups and links.</p>
+            <a href="projects.html">See the work →</a>
+          </article>
+          <article class="card">
+            <p class="eyebrow">03 — Tool</p>
+            <h3>Academic Planner</h3>
+            <p>An interactive to-do list for assignments and deadlines — add, complete, filter, and delete tasks.</p>
+            <a href="planner-dashboard.html">Open planner →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Kosisochukwu Ezejiugo · MIVA Open University · All Rights Reserved</span>
+      <span>Built with semantic HTML, CSS Grid/Flexbox &amp; vanilla JS</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

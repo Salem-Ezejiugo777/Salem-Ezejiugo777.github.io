@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Planner Dashboard — Kosisochukwu Ezejiugo</title>
+  <meta name="description" content="A modern, interactive academic planner with calendar, tasks, and event management." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVJkEZSMUkrQ6usKNU8gohQG20XyByMi+8V7yC8B6+ggRyd0hVVUutR6cssUHc180+AvqVzKZZQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-bar" aria-label="Primary">
+      <a class="brand" href="index.html">MIVA<small>PORTFOLIO / CIT 204</small></a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="dashboard.html" aria-current="page">Academic Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="dashboard-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a class="logo" href="index.html">
+          <i class="fas fa-graduation-cap"></i>
+          <span>MIVA</span>
+        </a>
+        <button class="sidebar-toggle mobile-only" aria-label="Close sidebar">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+          <li><a href="dashboard.html" class="nav-link active"><i class="fas fa-calendar-alt"></i><span>Planner</span></a></li>
+          <li><a href="#" class="nav-link"><i class="fas fa-book"></i><span>Courses</span></a></li>
+          <li><a href="#" class="nav-link"><i class="fas fa-tasks"></i><span>Tasks</span></a></li>
+          <li><a href="#" class="nav-link"><i class="fas fa-project-diagram"></i><span>Projects</span></a></li>
+          <li><a href="#" class="nav-link"><i class="fas fa-calendar-check"></i><span>Events</span></a></li>
+          <li><a href="#" class="nav-link"><i class="fas fa-chart-bar"></i><span>Grades</span></a></li>
+          <li><a href="#" class="nav-link"><i class="fas fa-sticky-note"></i><span>Notes</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="#" class="nav-link"><i class="fas fa-cog"></i><span>Settings</span></a>
+        <a href="index.html" class="nav-link logout"><i class="fas fa-sign-out-alt"></i><span>Back to Home</span></a>
+      </div>
+    </aside>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay mobile-only"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="header-left">
+          <button class="menu-toggle mobile-only" aria-label="Open sidebar">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1>Academic Planner</h1>
+        </div>
+
+        <div class="header-right">
+          <button class="icon-btn notification-btn" aria-label="Notifications">
+            <i class="fas fa-bell"></i>
+            <span class="notification-badge">3</span>
+          </button>
+          <div class="user-profile">
+            <img src="https://ui-avatars.com/api/?name=Kosisochukwu+Ezejiugo&background=d4a574&color=fff&size=40" alt="User profile" class="profile-pic" />
+            <div class="profile-dropdown">
+              <p class="profile-name">Kosisochukwu Ezejiugo</p>
+              <small>CIT 204 Student</small>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <div class="content-wrapper">
+        <!-- Calendar Section -->
+        <section class="calendar-section">
+          <div class="calendar-card">
+            <div class="calendar-header">
+              <div class="month-navigation">
+                <button class="nav-btn prev-month" aria-label="Previous month">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <h2 class="current-month">December 2024</h2>
+                <button class="nav-btn next-month" aria-label="Next month">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+              <button class="btn btn-gold today-btn">Today</button>
+            </div>
+
+            <div class="calendar-tabs">
+              <button class="tab-btn active" data-view="month">Month</button>
+              <button class="tab-btn" data-view="week">Week</button>
+              <button class="tab-btn" data-view="day">Day</button>
+            </div>
+
+            <!-- Month View -->
+            <div class="calendar-view month-view active">
+              <div class="weekdays">
+                <div class="weekday">Sun</div>
+                <div class="weekday">Mon</div>
+                <div class="weekday">Tue</div>
+                <div class="weekday">Wed</div>
+                <div class="weekday">Thu</div>
+                <div class="weekday">Fri</div>
+                <div class="weekday">Sat</div>
+              </div>
+              <div class="calendar-grid" id="calendar-grid"></div>
+            </div>
+
+            <!-- Week View -->
+            <div class="calendar-view week-view">
+              <div class="week-grid" id="week-grid"></div>
+            </div>
+
+            <!-- Day View -->
+            <div class="calendar-view day-view">
+              <div class="day-schedule" id="day-schedule"></div>
+            </div>
+
+            <button class="btn btn-gold add-event-btn">
+              <i class="fas fa-plus"></i> Add Event
+            </button>
+          </div>
+        </section>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+          <!-- Today's Agenda -->
+          <div class="agenda-card">
+            <div class="card-header">
+              <h3>Today's Agenda</h3>
+              <span class="agenda-count" id="agenda-count">0</span>
+            </div>
+            <div class="agenda-list" id="agenda-list">
+              <p class="empty-state">No events scheduled for today</p>
+            </div>
+          </div>
+
+          <!-- Tasks -->
+          <div class="tasks-card">
+            <div class="card-header">
+              <h3>Tasks</h3>
+              <span class="task-count" id="task-count">0</span>
+            </div>
+
+            <div class="task-input-group">
+              <input type="text" id="task-input" class="task-input" placeholder="Add a new task..." />
+              <button class="btn btn-sm btn-gold add-task-btn" aria-label="Add task">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+
+            <ul class="tasks-list" id="tasks-list">
+              <li class="empty-state">No tasks yet</li>
+            </ul>
+          </div>
+
+          <!-- Upcoming Deadlines -->
+          <div class="deadlines-card">
+            <div class="card-header">
+              <h3>Upcoming Deadlines</h3>
+            </div>
+            <div class="deadlines-list" id="deadlines-list">
+              <p class="empty-state">No upcoming deadlines</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <!-- Add Event Modal -->
+  <div class="modal" id="event-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Add New Event</h2>
+        <button class="modal-close" aria-label="Close modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <form class="event-form" id="event-form">
+        <div class="form-group">
+          <label for="event-title">Event Title <span class="required">*</span></label>
+          <input type="text" id="event-title" name="event-title" placeholder="e.g., DSA Lecture" required />
+        </div>
+
+        <div class="form-group">
+          <label for="event-date">Date <span class="required">*</span></label>
+          <input type="date" id="event-date" name="event-date" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="event-time">Start Time <span class="required">*</span></label>
+            <input type="time" id="event-time" name="event-time" required />
+          </div>
+          <div class="form-group">
+            <label for="event-duration">Duration (minutes)</label>
+            <input type="number" id="event-duration" name="event-duration" placeholder="60" min="15" step="15" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="event-category">Category <span class="required">*</span></label>
+          <select id="event-category" name="event-category" required>
+            <option value="">Select a category</option>
+            <option value="lecture">Lecture</option>
+            <option value="tutorial">Tutorial</option>
+            <option value="assignment">Assignment</option>
+            <option value="exam">Exam</option>
+            <option value="study">Study Session</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="event-description">Description</label>
+          <textarea id="event-description" name="event-description" placeholder="Add event details..." rows="3"></textarea>
+        </div>
+
+        <div class="form-group checkbox">
+          <input type="checkbox" id="event-reminder" name="event-reminder" checked />
+          <label for="event-reminder">Send reminder</label>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-gold">Add Event</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

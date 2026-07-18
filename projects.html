@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects · Kosisochukwu Ezejiugo — MIVA Student Portfolio</title>
+  <meta name="description" content="A showcase of coursework and personal web development projects." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-bar" aria-label="Primary">
+      <a class="brand" href="index.html">MIVA<small>PORTFOLIO / CIT 204</small></a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="planner-dashboard.html">Academic Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom:40px;">
+      <div class="container">
+        <p class="eyebrow">Coursework & personal work</p>
+        <h1>Projects</h1>
+        <p class="hero-bio">A few things I've built while learning web technologies — including this site itself.</p>
+      </div>
+    </section>
+
+    <!-- ============ PROJECT SPOTLIGHT ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="spotlight-card">
+          <div class="spotlight-content">
+            <p class="eyebrow">Featured project</p>
+            <h2>Student Portfolio & Academic Manager</h2>
+            <p>This comprehensive portfolio site showcases my journey as a web developer. It features a fully functional academic planner with task management, grade calculation, and progress tracking.</p>
+            <div class="spotlight-meta">
+              <div class="meta-item">
+                <strong>Type</strong>
+                <span>Term Project</span>
+              </div>
+              <div class="meta-item">
+                <strong>Status</strong>
+                <span>Complete</span>
+              </div>
+              <div class="meta-item">
+                <strong>Course</strong>
+                <span>CIT 204: Intro to Web Tech</span>
+              </div>
+            </div>
+            <div class="project-tags" style="margin-top: 24px;">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS Grid</span>
+              <span class="tag">CSS Flexbox</span>
+              <span class="tag">Vanilla JS</span>
+              <span class="tag">localStorage</span>
+              <span class="tag">Responsive Design</span>
+            </div>
+            <div class="project-links" style="margin-top: 28px;">
+              <a href="index.html" class="btn">Explore live site →</a>
+              <a href="https://github.com/Salem-Ezejiugo777/Assessment_1" class="btn btn-outline">View on GitHub →</a>
+            </div>
+          </div>
+          <div class="spotlight-visual">
+            <img 
+              src="assets/portfolio-project-thumb.svg" 
+              alt="Student Portfolio and Academic Manager project screenshot showing the homepage and planner interface" 
+              class="spotlight-image" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECT FILTERS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>All Projects</h2>
+          <p>Filter by project type and category to explore my work.</p>
+        </div>
+        <div class="project-filters">
+          <button class="filter-btn active" data-category="all">All Projects</button>
+          <button class="filter-btn" data-category="term">Term Projects</button>
+          <button class="filter-btn" data-category="exercise">Class Exercises</button>
+          <button class="filter-btn" data-category="personal">Personal Work</button>
+        </div>
+
+        <div class="grid-3" id="projects-grid">
+
+          <article class="card project-card" data-category="term">
+            <img 
+              src="assets/portfolio-project-thumb.svg" 
+              alt="Student Portfolio and Academic Manager project screenshot" 
+              class="project-thumb"
+              loading="lazy" />
+            <p class="eyebrow">Term project</p>
+            <h2>Student Portfolio & Academic Manager</h2>
+            <p>This very site: a five-page responsive portfolio with an interactive academic planner, built for the Introduction to Web Technologies course.</p>
+            <div class="project-tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS Grid</span>
+              <span class="tag">Vanilla JS</span>
+            </div>
+            <div class="project-links">
+              <a href="index.html">Live site →</a>
+              <a href="https://github.com/Salem-Ezejiugo777/Assessment_1">Source code →</a>
+            </div>
+          </article>
+
+          <article class="card project-card" data-category="exercise">
+            <img 
+              src="assets/event-finder-thumb.svg" 
+              alt="Campus Event Finder project screenshot showing event list with filter controls" 
+              class="project-thumb"
+              loading="lazy" />
+            <p class="eyebrow">Class exercise</p>
+            <h2>Campus Event Finder</h2>
+            <p>A small JavaScript app that filters and searches a list of campus events by date and category, using array methods and DOM updates.</p>
+            <div class="project-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">JSON</span>
+              <span class="tag">Flexbox</span>
+            </div>
+            <div class="project-links">
+              <a href="projects/event-finder/index.html">Live demo →</a>
+              <a href="https://github.com/Salem-Ezejiugo777/Assessment_1/tree/main/projects/event-finder">Source code →</a>
+            </div>
+          </article>
+
+          <article class="card project-card" data-category="personal">
+            <img 
+              src="assets/timer-tracker-thumb.svg" 
+              alt="Study Timer and Habit Tracker project screenshot" 
+              class="project-thumb"
+              loading="lazy" />
+            <p class="eyebrow">Personal project</p>
+            <h2>Study Timer & Habit Tracker</h2>
+            <p>A Pomodoro-style timer with a weekly habit grid, built to help me stay focused during independent study blocks between classes.</p>
+            <div class="project-tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS Animations</span>
+              <span class="tag">localStorage</span>
+            </div>
+            <div class="project-links">
+              <a href="projects/study-timer/index.html">Live demo →</a>
+              <a href="https://github.com/Salem-Ezejiugo777/Assessment_1/tree/main/projects/study-timer">Source code →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECHNOLOGIES SHOWCASE ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Skills & Tools</p>
+          <h2>Technologies Used</h2>
+          <p>A snapshot of the technologies and techniques I've applied across my projects.</p>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h3>Frontend Markup</h3>
+            <ul class="tech-list">
+              <li>Semantic HTML5</li>
+              <li>Accessibility (ARIA labels)</li>
+              <li>Meta tags & SEO</li>
+              <li>Responsive attributes</li>
+            </ul>
+          </div>
+          <div class="tech-card">
+            <h3>Styling & Layout</h3>
+            <ul class="tech-list">
+              <li>CSS Grid & Flexbox</li>
+              <li>CSS Variables & custom properties</li>
+              <li>Animations & transitions</li>
+              <li>Mobile-first responsive design</li>
+            </ul>
+          </div>
+          <div class="tech-card">
+            <h3>JavaScript & Interactivity</h3>
+            <ul class="tech-list">
+              <li>DOM manipulation</li>
+              <li>Event listeners & handlers</li>
+              <li>localStorage persistence</li>
+              <li>Form validation</li>
+            </ul>
+          </div>
+          <div class="tech-card">
+            <h3>Development Practices</h3>
+            <ul class="tech-list">
+              <li>Git & GitHub version control</li>
+              <li>Semantic code structure</li>
+              <li>Web performance optimization</li>
+              <li>Testing & debugging</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECT UPDATES TIMELINE ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Development Progress</p>
+          <h2>Recent Updates</h2>
+          <p>Key milestones and updates from my project development journey.</p>
+        </div>
+        <ul class="timeline">
+          <li>
+            <h4>Completed Portfolio Site</h4>
+            <p class="tl-tag">August 2026</p>
+            <p>Successfully launched the full Student Portfolio & Academic Manager site with all five pages, interactive planner, and mobile responsiveness.</p>
+          </li>
+          <li>
+            <h4>Academic Planner Feature</h4>
+            <p class="tl-tag">July 2026</p>
+            <p>Implemented task management system with filtering, priority levels, due date tracking, and localStorage persistence for long-term data retention.</p>
+          </li>
+          <li>
+            <h4>Study Tools Integration</h4>
+            <p class="tl-tag">July 2026</p>
+            <p>Built Pomodoro timer and habit tracker to support personal productivity and academic success.</p>
+          </li>
+          <li>
+            <h4>Class Project: Event Finder</h4>
+            <p class="tl-tag">June 2026</p>
+            <p>Completed Campus Event Finder exercise, demonstrating proficiency with JavaScript array methods and dynamic DOM manipulation.</p>
+          </li>
+          <li>
+            <h4>Responsive Design Implementation</h4>
+            <p class="tl-tag">May 2026</p>
+            <p>Applied mobile-first design principles using CSS Grid and media queries to ensure cross-device compatibility.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Kosisochukwu Ezejiugo · MIVA Open University · Introduction to Web Technologies</span>
+      <span>Built with semantic HTML, CSS Grid/Flexbox & vanilla JS</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact · Kosisochukwu Ezejiugo — MIVA Student Portfolio</title>
+  <meta name="description" content="Get in touch — contact form with client-side validation." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-bar" aria-label="Primary">
+      <a class="brand" href="index.html">MIVA<small>PORTFOLIO / CIT&nbsp;204</small></a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner-dashboard.html">Academic Planner</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom:40px;">
+      <div class="container">
+        <p class="eyebrow">Get in touch</p>
+        <h1>Contact</h1>
+        <p class="hero-bio">Have a question about a project or want to collaborate? Send a message below.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container contact-grid">
+
+        <div>
+          <div id="form-status" class="form-status" role="status"></div>
+
+          <form id="contact-form" novalidate>
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" placeholder="Your full name" />
+              <div class="field-error" id="name-error"></div>
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" />
+              <div class="field-error" id="email-error"></div>
+            </div>
+
+            <div class="form-field">
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Digits only, e.g. 08012345678" />
+              <div class="field-error" id="phone-error"></div>
+            </div>
+
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="What would you like to say?"></textarea>
+              <div class="field-error" id="message-error"></div>
+            </div>
+
+            <button type="submit" class="btn btn-brass">Send message</button>
+          </form>
+        </div>
+
+        <aside class="info-card">
+          <p class="eyebrow">Details</p>
+          <h2 class="mt-0">Other ways to reach me</h2>
+          <dl class="info-list">
+            <div>
+              <dt>Email</dt>
+              <dd>k.ezejiugo8171@miva.edu.ng</dd>
+            </div>
+            <div>
+              <dt>Location</dt>
+              <dd>Lagos, Nigeria (remote / online student)</dd>
+            </div>
+            <div>
+              <dt>Phone Number</dt>
+              <dd>+234 8131347280</dd>
+            </div>
+            <div>
+              <dt>GITHUB</dt>
+              <dd>https://github.com/Salem-Ezejiugo777</dd>
+            </div>
+          </dl>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Kosisochukwu Ezejiugo · MIVA Open University · All Rights Reserved</span>
+      <span>Built with semantic HTML, CSS Grid/Flexbox &amp; vanilla JS</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
